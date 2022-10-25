@@ -1,17 +1,27 @@
-import { Heading } from './components/Heading';
-import { Logo } from './Logo';
-import {Text} from './components/Text';
-import { Button } from './components/Button';
-
-
 import './styles/global.css';
-import { TextInput } from './components/TextInput';
-import { Envelope, Lock, SignIn } from 'phosphor-react';
-import { Checkbox } from './components/Checkbox';
-import { Signin } from './components/pages/Signin';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Signin } from './pages/Login/Signin';
+import RegisterPage from './pages/register/RegisterPage';
+import HomePage from './pages/Home/HomePage';
 
-export function App(){
- return (
-     <Signin />
+
+
+
+
+function App (){
+  return(
+<BrowserRouter>
+    <div className='container'>
+    
+    <Routes>
+                <Route path='/' element={<HomePage/>} />
+                <Route path='/register' element={<RegisterPage/>} />
+                <Route path='/login' element={<Signin/>} />
+    </Routes>
+    
+    </div>
+    </BrowserRouter>
+    
   )
 }
+export default App;

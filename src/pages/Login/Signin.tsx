@@ -1,11 +1,13 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
 import { Envelope, Lock } from "phosphor-react";
 import { Logo } from "../../Logo";
-import { Button } from "../Button";
-import { TextInput } from "../TextInput";
-import { Text } from "../Text";
 import { FormEvent, useState } from "react";
 import axios from 'axios'
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { Text } from "../../components/Text";
+import { TextInput } from "../../components/TextInput";
+import { Button } from "../../components/Button";
+
 
 export function Signin() {
   
@@ -20,17 +22,17 @@ await axios.post('/sessions',{
   email: 'marciopvpsubs@gmail.com',
   password: '12345678',
 })
-
-
     setIsUserSignedIn(true)
   }
 
 
 return (
+  
+
 <div className='w-screen h-screen bg-gray-900 flex items-center flex-col justify-center text-gray-100'>
         
         <header className='flex flex-col items-center'>
-        <Logo />
+        <Link to= '/' > <Logo /> </Link>
 
 <Text size='lg' className='text-gray-400 mt-0'>
       Faça login e comece a usar!
@@ -59,16 +61,8 @@ return (
               </TextInput.Icon>
               <TextInput.Input type ='password' id='password' placeholder='**********'/>
             </TextInput.Root>
+
           </label>
-
-          <label htmlFor='remember' className='flex items-center gap-2'>
-            <Checkbox id='remember'/>    
-            <Text size='sm' className='text-gray-100'>
-              Lembrar de mim por 30 dias
-              </Text>      
-            
-            </label>
-
             <Button type='submit' className='mt-4'>
               Entrar na plataforma
             </Button>
@@ -80,16 +74,15 @@ return (
           <Text asChild size='sm'> 
           <a href='' className='text-gray-400 underline hover:text-gray-100'> Esqueceu senha?</a>
           </Text>
-
-            <Text asChild size='sm'>
-            <a href='' className='text-gray-400 underline hover:text-gray-100'> Não possui uma conta? Crie uma agora!</a>
-            </Text>
           
 
+          <Text asChild size='sm'>
+                      <Link to= '/register' className='text-gray-400 underline hover:text-gray-100'>Não possui uma conta? Crie uma agora! </Link>
+              </Text>
         </footer>
       </div>
-
 )
+
 
 }
 

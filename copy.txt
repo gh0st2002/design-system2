@@ -1,0 +1,37 @@
+function RegisterPage(){
+    let history = useNavigate();
+    const[data, setData] = useState({
+      
+name: "",
+password: "",
+email: "",
+    })
+
+    const handleChange= (e: any)=> {
+      setData({ ...data, [e.target.name]: e.target.value});
+console.log(data)
+    }
+
+    const submitForm=(e:any)=>{
+      e.preventDefault();
+      const sendData = {
+        name:data.name,
+        email:data.email,
+        password:data.password
+
+      }
+
+      console.log(sendData);
+
+      axios.post('http://localhost/php-react/register-login-php-simple/insert.php', sendData).
+      then((result)=>{
+        if(result.data.Status == 'Invalid'){
+          alert ('Invalid User');
+        }
+       
+        else{
+          history('/dashboard');
+        }
+        
+      })
+    }
