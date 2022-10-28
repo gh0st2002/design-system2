@@ -14,15 +14,15 @@
 <br>
 
 <p align="center">
-  <img alt="Payment_api" src=".github/project.png" width="100%">
+  <img alt="Design_Inicial" src=".github/Desginsystem.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Payment_api" src=".github/project2.png" width="100%">
+  <img alt="Payment_api" src=".github/Desginsystem2.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Payment_api" src=".github/project3.png" width="100%">
+  <img alt="Payment_api" src=".github/Desginsystem3.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
